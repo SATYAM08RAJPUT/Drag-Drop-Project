@@ -1,0 +1,74 @@
+*{
+  padding: 0px;
+  margin: 0px;
+}
+.head{
+  display: flex;
+  background-color: #fff;
+  padding: 1%;
+  box-shadow: 0px 0px 1px 2px rgb(217, 216, 219);
+  background: linear-gradient(#b4a8a8, #cad3ba);
+
+}
+.left{
+  width: 20%;
+  display: flex;
+}
+.left h2{
+  margin-left: 5%;
+  font-family: sans-serif;
+}
+.middle{
+  width: 50%;
+  display: flex;
+}
+.middle h3{
+  font-family: sans-serif;
+  font-size: 20;
+  margin-top: -1px;
+}
+.right{
+  width: 25%;
+  display: flex;
+  justify-content: right;
+}
+.right button{
+  background-color: #635fc7;
+  color: white;
+  padding: 3%;
+  font-size: 15;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.headerImg{
+  width: 10%;
+  height: 80%;
+}
+body{
+  background-color: #f4f7fd;
+  background-image: url('https://c4.wallpaperflare.com/wallpaper/632/34/549/technology-monitor-alpha-coders-binary-wallpaper-preview.jpg');
+}
+.data{
+ box-shadow: 1PX 1PX 1PX 1PX rgb(142, 136, 136);
+  padding: 6%;
+  margin-top: 6%;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+#todo{
+  display: grid;
+  grid-template-columns: 25% 25% 25%;
+  justify-content: space-evenly;
+}
+h3{
+  text-align: center;
+  margin-top: 2%;
+  font-family: sans-serif;
+  color: white;
+  margin-top: 5%;
+}
+.platform{
+  color: black;
+}
