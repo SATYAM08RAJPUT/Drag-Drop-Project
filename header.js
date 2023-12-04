@@ -1,3 +1,6 @@
+
+
+
 const todoData = [
     {
         title: "Build UI for onboarding flow",
@@ -63,7 +66,7 @@ const donedata  = [
     }
 ]
 
-class Header{
+export class Header{
     constructor(data){
         this.data = data
         var elements = [];
