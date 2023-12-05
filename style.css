@@ -72,3 +72,61 @@ h3{
 .platform{
   color: black;
 }
+.pop{
+  width: 320px;
+  background-color: #c9a9a9;
+  border-radius: 6px;
+  position: absolute;
+  top: 50%;
+  height: 60%;
+  margin: 1%;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(1);
+  padding: 0 30px 30px;
+  color: #333;
+  border: solid;
+  transition: transform 0.9s, top 2s;
+}
+.popheading{
+  margin-top: 6%;
+  padding: 1%;
+  font-family: sans-serif;
+}
+#popinput{
+  width: 100%;
+  padding: 2%;
+  border: solid 1px;
+}
+#popsecondinput{
+  width: 100%;
+  padding: 2%;
+  border: solid 1px;
+}
+.firtpop{
+  margin-top: 6%;
+}
+label{
+  font-size: 25;
+  margin-bottom: 5%;
+}
+.currentstatus{
+  font-size: 18px;
+  margin-top: 5%;
+}
+#status{
+  width: 100%;
+  padding: 1%;
+  border: solid 2px;
+  
+}
+.cretnbtn{
+  width: 100%;
+  margin-top: 11%;
+  padding: 2%;
+  background-color: rgb(52 168 83);
+  cursor: pointer;
+  color: white;
+}
+label{
+  font-size: 18px;
+}

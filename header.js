@@ -78,7 +78,7 @@ export class Header{
         <h3 class ="platform">Platform Launch</h3>
         </div>
         <div class ="right">
-        <button> <i style="font-size:8px" class="fa">&#xf067;</i> Add New Task</button>
+        <button id ="deltebtn"> <i style="font-size:8px" class="fa">&#xf067;</i> Add New Task</button>
         </div>
         </div>`
         document.getElementById('headerdata').innerHTML = headerData;   
@@ -160,12 +160,54 @@ export class Header{
         });
     }
 
+    deletebtn(){
+        const deltebtn = document.getElementById('deltebtn');
+        console.log(deltebtn)
+        deltebtn.addEventListener('click',() => {
+            const pop = `<div class ="pop">
+            <h4 class = "popheading">Add New Task</h4>
+            <div class ="firtpop"><label class ="title">Title</label>
+            <input type ="search" placeholder ="Place your Title" id ="popinput">
+            </div>
+            <div class ="firtpop">
+            <label class ="title">Status</label>
+            <input type ="search" placeholder ="Place your Status" id ="popsecondinput"  >
+            </div>
+            <div class ="currentstatus">Current Status</div>
+            <select id="status">
+            <option value="todo">Todo</option>
+            <option value="inprocess">InProcess</option>
+            <option value="done">Done</option>
+            </select>
+            <button class ="cretnbtn" >Create Task</button>
+            </div>`
+            document.getElementById("popup").innerHTML = pop;
+            const takeFirstInput = document.querySelector('.cretnbtn')
+            console.log(takeFirstInput)
+            takeFirstInput.addEventListener('click',() => {
+                const fetchfirst = document.getElementById("popinput").value;
+                console.log(fetchfirst);
+                const fetchSecond = document.getElementById("popsecondinput").value;
+                console.log(fetchSecond);
+                var addNew = {
+                    title: fetchfirst,
+                    status: fetchSecond,
+                    // id: todoData.length + 1,
+                }
+                todoData.push(addNew);
+                this.renderTodoData(todoData);
+            })
+        })
+       
+    }
+
     init(){
         this.renderHeader()
         this.renderTodoData(todoData);
         this.renderinProcess(inProcessData);
         this.renderDonedata(donedata);
         this.renderDragDrop();
+        this.deletebtn();
     }
 }
 
