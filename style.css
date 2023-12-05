@@ -73,12 +73,12 @@ h3{
   color: black;
 }
 .pop{
-  width: 320px;
-  background-color: #c9a9a9;
-  border-radius: 6px;
+  width: 350px;
+  background-color: #fbf9f9;
+  border-radius: 10px;
   position: absolute;
   top: 50%;
-  height: 60%;
+  height: 65%;
   margin: 1%;
   left: 50%;
   transform: translate(-50%,-50%) scale(1);
@@ -89,6 +89,7 @@ h3{
 }
 .popheading{
   margin-top: 6%;
+  font-size: 21px;
   padding: 1%;
   font-family: sans-serif;
 }
@@ -96,11 +97,15 @@ h3{
   width: 100%;
   padding: 2%;
   border: solid 1px;
+  margin-top: 2%;
+  border-radius: 5px;
 }
 #popsecondinput{
   width: 100%;
   padding: 2%;
+  margin-top: 2%;
   border: solid 1px;
+  border-radius: 5px;
 }
 .firtpop{
   margin-top: 6%;
@@ -116,17 +121,22 @@ label{
 #status{
   width: 100%;
   padding: 1%;
+  margin-top: 2%;
   border: solid 2px;
+  border-radius: 5px;
   
 }
 .cretnbtn{
   width: 100%;
   margin-top: 11%;
-  padding: 2%;
+  padding: 3%;
   background-color: rgb(52 168 83);
   cursor: pointer;
   color: white;
+  border-radius: 5px;
+  font-size: 20;
 }
 label{
   font-size: 18px;
+  line-height: 5px;
 }

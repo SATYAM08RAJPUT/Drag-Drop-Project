@@ -192,10 +192,10 @@ export class Header{
                 var addNew = {
                     title: fetchfirst,
                     status: fetchSecond,
-                    // id: todoData.length + 1,
                 }
                 todoData.push(addNew);
-                this.renderTodoData(todoData);
+                this.renderTodoData(todoData); 
+                document.getElementById("popup").remove()
             })
         })
        
