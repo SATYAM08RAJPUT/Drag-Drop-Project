@@ -1,6 +1,3 @@
-
-
-
 const todoData = [
     {
         title: "Build UI for onboarding flow",
@@ -169,7 +166,6 @@ export class Header{
         this.renderinProcess(inProcessData);
         this.renderDonedata(donedata);
         this.renderDragDrop();
-
     }
 }
 
