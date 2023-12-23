@@ -98,6 +98,7 @@ export class Header{
         const takeHtmlId = document.getElementById('todo');
         takeHtmlId.append(createTododiv);
         createTododiv.setAttribute('class','tododid')
+        createTododiv.setAttribute('id','divfirst');
         createTododiv.innerHTML = icontodo + tpldata;
     }
 
@@ -113,6 +114,7 @@ export class Header{
       const takeTodoId = document.getElementById('todo');
       takeTodoId.append(createProcessdiv);
       createProcessdiv.setAttribute('class','tododid')
+      createProcessdiv.setAttribute('id','seconddiv')
       createProcessdiv.innerHTML =inproces + htnldata;
     }
 
@@ -131,6 +133,7 @@ export class Header{
         console.log(takeaboveid)
         takeaboveid.append(creatediv)
         creatediv.setAttribute('class','tododid');
+        creatediv.setAttribute('id','thirddiv')
         creatediv.innerHTML = done + donetpl;  
     }
 
@@ -165,6 +168,7 @@ export class Header{
         console.log(deltebtn)
         deltebtn.addEventListener('click',() => {
             const pop = `<div class ="pop">
+            <a href="#" class="close"></a>
             <h4 class = "popheading">Add New Task</h4>
             <div class ="firtpop"><label class ="title">Title</label>
             <input type ="search" placeholder ="Place your Title" id ="popinput">
@@ -175,7 +179,7 @@ export class Header{
             </div>
             <div class ="currentstatus">Current Status</div>
             <select id="status">
-            <option value="todo">Todo</option>
+            <option value="todo" >Todo</option>
             <option value="inprocess">InProcess</option>
             <option value="done">Done</option>
             </select>
@@ -186,19 +190,35 @@ export class Header{
             console.log(takeFirstInput)
             takeFirstInput.addEventListener('click',() => {
                 const fetchfirst = document.getElementById("popinput").value;
-                console.log(fetchfirst);
                 const fetchSecond = document.getElementById("popsecondinput").value;
-                console.log(fetchSecond);
+                const statusDropDown = document.getElementById('status');
+                const selectedStatus  = statusDropDown.value;
+                
                 var addNew = {
                     title: fetchfirst,
                     status: fetchSecond,
                 }
-                todoData.push(addNew);
-                this.renderTodoData(todoData); 
-                document.getElementById("popup").remove()
+                const taskElement = document.createElement("div");
+                taskElement.setAttribute('class', 'data');
+                taskElement.draggable = true;
+                taskElement.innerHTML = `${fetchfirst}<h5>${fetchSecond}</h5>`
+        
+                let targetContainer;
+                if (selectedStatus === "todo") {
+                    targetContainer = document.getElementById('divfirst');
+                } else if (selectedStatus === "inprocess") {
+                    targetContainer = document.getElementById('seconddiv');
+                } else if (selectedStatus === "done") {
+                    targetContainer = document.getElementById("thirddiv");
+                }
+                if (targetContainer) {
+                    targetContainer.appendChild(taskElement);
+                }
+                document.getElementById("popup").innerHTML = '';
+                this.renderDragDrop();
+                });
             })
-        })
-       
+            
     }
 
     init(){
